@@ -15,7 +15,7 @@ function Hero() {
 
   const fetchResumeUrl = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/settings/resume");
+      const response = await axios.get("http://https://portfolio-backend-paan.onrender.com/api/settings/resume");
 
       if (response.data.resumeUrl) {
         setResumeUrl(response.data.resumeUrl);

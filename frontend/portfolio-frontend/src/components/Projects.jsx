@@ -22,7 +22,7 @@ function Projects() {
 
   const fetchProjects = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/projects");
+      const response = await axios.get("https://portfolio-backend-paan.onrender.com/api/projects");
       setProjects(response.data);
       setLoading(false);
     } catch (err) {

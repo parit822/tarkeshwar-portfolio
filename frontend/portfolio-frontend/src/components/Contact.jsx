@@ -27,7 +27,7 @@ function Contact() {
     setError("");
 
     try {
-      await axios.post("http://localhost:8080/api/contact", formData);
+      await axios.post("https://portfolio-backend-paan.onrender.com/api/contact", formData);
 
       setSuccess("Message sent successfully!");
 

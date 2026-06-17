@@ -60,7 +60,7 @@ function Skills() {
 
   const fetchSkills = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/skills");
+      const response = await axios.get("https://portfolio-backend-paan.onrender.com/api/skills");
       setSkills(response.data);
     } catch (err) {
       setError("Unable to load skills.");

@@ -14,7 +14,7 @@ function Experience() {
   const fetchExperiences = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/experiences"
+        "https://portfolio-backend-paan.onrender.com/api/experiences"
       );
       setExperiences(response.data);
     } catch (err) {

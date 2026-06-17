@@ -50,22 +50,22 @@ function AdminDashboard() {
   };
 
   const fetchProjects = async () => {
-    const res = await axios.get("http://localhost:8080/api/projects");
+    const res = await axios.get("http://https://portfolio-backend-paan.onrender.com/api/projects");
     setProjects(res.data);
   };
 
   const fetchSkills = async () => {
-    const res = await axios.get("http://localhost:8080/api/skills");
+    const res = await axios.get("http://https://portfolio-backend-paan.onrender.com/api/skills");
     setSkills(res.data);
   };
 
   const fetchExperiences = async () => {
-    const res = await axios.get("http://localhost:8080/api/experiences");
+    const res = await axios.get("http://https://portfolio-backend-paan.onrender.com/api/experiences");
     setExperiences(res.data);
   };
 
   const fetchResumeUrl = async () => {
-    const res = await axios.get("http://localhost:8080/api/settings/resume");
+    const res = await axios.get("http://https://portfolio-backend-paan.onrender.com/api/settings/resume");
     setResumeUrl(res.data.resumeUrl || "");
   };
 
@@ -81,7 +81,7 @@ function AdminDashboard() {
     formData.append("file", resumeFile);
 
     const res = await axios.post(
-      "http://localhost:8080/api/settings/resume/upload",
+      "http://https://portfolio-backend-paan.onrender.com/api/settings/resume/upload",
       formData,
       {
         headers: {
@@ -98,7 +98,7 @@ function AdminDashboard() {
   const updateResumeUrl = async (e) => {
     e.preventDefault();
 
-    await axios.put("http://localhost:8080/api/settings/resume", {
+    await axios.put("http://https://portfolio-backend-paan.onrender.com/api/settings/resume", {
       resumeUrl: resumeUrl,
     });
 
@@ -120,7 +120,7 @@ function AdminDashboard() {
   const addProject = async (e) => {
     e.preventDefault();
 
-    await axios.post("http://localhost:8080/api/projects", project);
+    await axios.post("http://https://portfolio-backend-paan.onrender.com/api/projects", project);
 
     setMessage("Project Added Successfully ✅");
 
@@ -139,7 +139,7 @@ function AdminDashboard() {
   const addSkill = async (e) => {
     e.preventDefault();
 
-    await axios.post("http://localhost:8080/api/skills", {
+    await axios.post("http://https://portfolio-backend-paan.onrender.com/api/skills", {
       ...skill,
       proficiency: Number(skill.proficiency),
     });
@@ -158,7 +158,7 @@ function AdminDashboard() {
   const addExperience = async (e) => {
     e.preventDefault();
 
-    await axios.post("http://localhost:8080/api/experiences", experience);
+    await axios.post("http://https://portfolio-backend-paan.onrender.com/api/experiences", experience);
 
     setMessage("Experience Added Successfully ✅");
 
@@ -174,19 +174,19 @@ function AdminDashboard() {
   };
 
   const deleteProject = async (id) => {
-    await axios.delete(`http://localhost:8080/api/projects/${id}`);
+    await axios.delete(`http://https://portfolio-backend-paan.onrender.com/api/projects/${id}`);
     setMessage("Project Deleted Successfully ✅");
     fetchProjects();
   };
 
   const deleteSkill = async (id) => {
-    await axios.delete(`http://localhost:8080/api/skills/${id}`);
+    await axios.delete(`http://https://portfolio-backend-paan.onrender.com/api/skills/${id}`);
     setMessage("Skill Deleted Successfully ✅");
     fetchSkills();
   };
 
   const deleteExperience = async (id) => {
-    await axios.delete(`http://localhost:8080/api/experiences/${id}`);
+    await axios.delete(`http://https://portfolio-backend-paan.onrender.com/api/experiences/${id}`);
     setMessage("Experience Deleted Successfully ✅");
     fetchExperiences();
   };
